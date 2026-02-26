@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DropShip Hub - Buy and Sell Products</title>
+        <link href="soko.css" rel="stylesheet" />
+        <script src="javasoko.js"></script>
+        <!-- This is the head section where we set the title and meta tags for the website -->
+    </head>
+    <body>
+        <div class="header">
+            
+            <div class="logo">
+                <div class="logo"><img src="soko%20Logo.png" width="101px" height="56px" /></div>
+            </div>
+            <div style="display: contents">
+                
+                <button onclick="gopage()">sell</button>
+            </div>
+        </div>
+        <div class="srchbar">
+            <div><input type="search" placeholder="serach your products here.." class="search" /></div>
+        </div>
+        <!-- Main content area -->
+        <main>
+            <!-- Section for product categories grid -->
+            <section id="categories">
+                <h2>Choose The Product Category you Wish to Buy</h2>
+                <div class="grid">
+                    <!-- Each category is a card that can be clicked to filter products -->
+                    <a class="card" data-category="electronics" href="electronic.html">
+                        <h3>Electronics</h3>
+                    </a>
+                    <a class="card" data-category="fashion" href="fashion.html">
+                        <h3>Fashion</h3>
+                    </a>
+                    <a class="card" data-category="hometools" href="home_tools.html">
+                        <h3>Home Tools</h3>
+                    </a>
+                    <a class="card" data-category="phones" href="phones.html">
+                        <h3>Phones</h3>
+                    </a>
+                    <a class="card" data-category="furnitures" href="furnitures.html">
+                        <h3>Furnitures</h3>
+                    </a>
+                    <a class="card" data-category="animals" href="animals.html">
+                        <h3>Animals</h3>
+                    </a>
+                    <a class="card" data-category="motor" href="motor.html">
+                        <h3>Motor</h3>
+                    </a>
+                    <a class="card" data-category="land" href="land.html">
+                        <h3>Land</h3>
+                    </a>
+                    <a class="card" data-category="cosmeticss" href="cosmetics.html">
+                        <h3>Cosmetics</h3>
+                    </a>
+                    <a class="card" data-category="softwares" href="softwares.html">
+                        <h3>Softwares</h3>
+                    </a>
+                    <a class="card" data-category="computer" href="computers.html">
+                        <h3>Computers</h3>
+                    </a>
+                    <a class="card" data-category="produce" href="produces.html">
+                        <h3>Produces</h3>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Section for displaying products -->
+            <section id="products">
+                <h2>Featured Products</h2>
+                
+            </section>
+        </main>
+        <div class="main-content">
+            <button class="open-btn" onclick="toggleModal(true)">Create Store Account</button>
+        </div>
+        <!-- ACCOUNT SIGNUP PAGE -->
+        <div id="accountModal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-x" onclick="toggleModal(false)">&times;</span>
+                <div class="modal-header">
+                    <h2>Set Up Your Store</h2>
+                </div>
+
+                <form id="storeForm">
+                    <div class="form-group">
+                        <label>Store Nickname</label>
+                        <input type="text" id="nickName" placeholder="e.g. Alex's Electronics" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contact Type</label>
+                        <select id="contactType">
+                            <option value="">Calls & WhatsApp</option>
+                            <option value="Call">Direct Call</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" id="contactNumber" placeholder="+1 234 567 890" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Store Location</label>
+                        <input type="text" id="location" placeholder="City, Country" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>LogIn PIN</label>
+                        <input type="text" id="pin" placeholder="12#w1" />
+                    </div>
+<div><button type="submit" class="btn-submit">Create Account</button>
+                    <a id="login-Redirect" style="cursor: pointer;">Already have an account, click to Login</a></div>
+                    
+                </form>
+            </div>
+        </div>
+        <!-- ACCOUNT LOG-IN PAGE -->
+        <div class="LoginPage" id="LoginPage"  >
+            <span class="close-x" id="loginClose">&times;</span>
+            <div class="cardLogin">
+                <div class="title">Enter Login PIN</div>
+
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <div class="keypad">
+                    <button class="key">1</button>
+                    <button class="key">2</button>
+                    <button class="key">3</button>
+                    <button class="key">4</button>
+                    <button class="key">5</button>
+                    <button class="key">6</button>
+                    <button class="key">7</button>
+                    <button class="key">8</button>
+                    <button class="key">9</button>
+                    <button class="key" id="clear">Clear</button>
+                    <button class="key">0</button>
+                    <button class="key" id="ok">OK</button>
+                </div>
+            </div>
+        </div>
+        <!-- Footer for additional information -->
+        <footer>
+            <p>&copy; 2023 DropShip Hub. All rights reserved.</p>
+        </footer>
+
+        <!-- CSS styles for the website -->
+        <script>
+            // ACCOUNT LOG-IN PAGE LOGIC -->
+        document.getElementById("login-Redirect").addEventListener("click", function(){
+            document.getElementById("LoginPage").style.display = "flex";
+            document.getElementById("accountModal").style.display="none";
+            document.body.classList.remove("modal-active");
+        });
+        document.getElementById("loginClose").addEventListener("click", function(){
+            document.getElementById("LoginPage").style.display = "none";
+        });
+            
+            
+        </script>
+        <!-- JavaScript for functionality -->
+    </body>
+</html>

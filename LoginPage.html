@@ -1,0 +1,52 @@
+.show-after-load {
+  display: none;
+}
+
+.show-after-load.active {
+  display: block; /* or flex if needed */
+}
+
+
+
+// ===============================
+// PART 1 — sell.htm logic
+// ===============================
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('.submit-btn');
+  if (!btn) return;
+
+  e.preventDefault();
+
+  // Set flag ONLY when coming from sell.htm
+  sessionStorage.setItem('openAfterRedirect', 'true');
+
+  // Redirect
+  window.location.href = "Dropshippimg.html";
+});
+
+
+// ===============================
+// PART 2 — Dropshippimg.html logic
+// ===============================
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Only run if we came from sell.htm
+  const shouldOpen = sessionStorage.getItem('openAfterRedirect');
+
+  if (shouldOpen === 'true') {
+
+    // Remove flag immediately so refresh won’t trigger it
+    sessionStorage.removeItem('openAfterRedirect');
+
+    // Wait 2 seconds
+    setTimeout(function () {
+
+      const target = document.querySelector('.show-after-load');
+      if (target) {
+        target.classList.add('active');   // show it using CSS
+      }
+
+    }, 2000);
+  }
+
+});

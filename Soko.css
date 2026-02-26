@@ -1,0 +1,539 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  background: #f5f6fa;
+  color: #333;
+}
+a {
+  color: black; font-weight: 600;
+  text-decoration: none;
+}
+
+
+
+/* Container */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: #f5f6fa;
+  color: white;
+}
+
+.header button {
+  padding: 10px 18px;
+  border: none;
+  background: #00a8ff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.profile-img {
+  width: 70px;
+  height: 70px;
+  background: #dbeafe;
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header button:hover {
+  background: #0097e6;
+}
+
+/* Search */
+.srchbar {
+  margin: 14px 0;
+  display: flex;
+  justify-content: center;
+}
+.search {
+  width: 100%;
+  max-width: 720px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f5f6fa;
+}
+
+/* Categories area */
+#categories {
+  margin-top: 6px;
+}
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+h2 {
+  color: #2980b9;
+  margin-top: 40px;
+  border-left: 5px solid #2980b9;
+  padding-left: 15px;
+}
+
+#categories h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+  background: #00a8ff;
+  color: white;
+  transform: translateY(-5px);
+}
+.card h3 {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #333;
+}
+.card.small {
+  font-size: 13px;
+  color: #666;
+  padding: 8px;
+}
+.card:active,
+.card.selected {
+  transform: translateY(1px);
+  border-color: #0b6b4a;
+  box-shadow: 0 6px 16px rgba(11, 107, 74, 0.06);
+}
+
+/* Products grid */
+#products {
+  margin-top: 18px;
+}
+#productList {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.product {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(10, 10, 10, 0.04);
+}
+.product img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #eee;
+}
+.product h4 {
+  margin: 8px 0 4px;
+  font-size: 15px;
+}
+.small {
+  font-size: 13px;
+  color: #555;
+}
+.price {
+  color: #b12704;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+/* Footer */
+footer {
+  margin-top: 22px;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+
+/* SELL PAGE */
+#sellForm {
+  background: white;
+  margin: 18px auto;
+  max-width: 720px;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+.sell-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.sell-header a {
+  color: #0b6b4a;
+  font-weight: 700;
+}
+#productForm {
+  margin-top: 10px;
+  display: block;
+  gap: 10px;
+}
+label {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  color: #555;
+}
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.helper {
+  font-size: 13px;
+  color: #666;
+  margin-top: 6px;
+}
+.form-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.form-row > * {
+  flex: 1;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+button[type="submit"],
+button#cancelSell {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+button[type="submit"] {
+  background: #0b6b4a;
+  color: white;
+}
+button#cancelSell {
+  background: #f1f1f1;
+  color: #333;
+}
+
+/* Image preview small */
+.img-preview {
+  margin-top: 8px;
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Small screens */
+@media (max-width: 250px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .search {
+    width: 100%;
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 101%;
+  height: 193px;
+  object-fit: cover;
+  background-color: #f4f4f4;
+}
+
+.product-info {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.product-meta {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.btn-contact {
+  display: block;
+  text-align: center;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: auto;
+}
+
+
+/* LOGIN PAGE */
+/* ================= LOGIN OVERLAY ================= */
+
+.LoginPage {
+    position: fixed;
+    inset: 0; /* top:0 left:0 right:0 bottom:0 */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: var(--overlay); /* dark overlay */
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+  
+  
+}
+
+/* ================= CARD ================= */
+
+.LoginPage .cardLogin {
+    width: 90%;
+    max-width: 320px;
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    text-align: center;
+    color: white;
+}
+
+/* ================= TITLE ================= */
+
+.LoginPage .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* ================= PIN DOTS ================= */
+
+.LoginPage .dots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.LoginPage .dot {
+    width: 14px;
+    height: 14px;
+    margin: 0 8px;
+    border-radius: 50%;
+    border: 2px solid #d0cdcd;
+}
+
+.LoginPage .dot.filled {
+    background: white;
+}
+
+/* ================= KEYPAD ================= */
+
+.LoginPage .keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* Buttons */
+.LoginPage .key {
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(40px);
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.LoginPage .key:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Clear & OK */
+.LoginPage #clear,
+.LoginPage #ok {
+    border-radius: 20px;
+}
+
+        /* Blur effect for the background content */
+        body.modal-active .main-content {
+            filter: blur(8px);
+            pointer-events: none;
+        }
+
+        /* --- Trigger Button --- */
+        .open-btn {
+            padding: 12px 24px;
+            background: var(--primary);
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* --- Modal Overlay --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+        }
+
+        /* --- Modal Box --- */
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 450px;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            color: #1e272e;
+            
+        }
+
+        .modal-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #2980b9;
+        }
+
+        /* --- Form Styling --- */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .close-x {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            cursor: pointer;
+            font-size: 5.1rem;
+            color: #ff0000;
+        }
+   
